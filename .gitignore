@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Extra
+.gitignore
+*~
+exe
+quote
+a.out
+*.swp
+*#
