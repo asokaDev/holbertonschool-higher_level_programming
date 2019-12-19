@@ -2,8 +2,8 @@
 def uniq_add(my_list=[]):
     add = 0
     my_list.sort()
-    if my_list is None or my_list is []:
-        return 0
+    if len(my_list) <= 0:
+        return(None)
     else:
         add += my_list[0]
     for i in range(1, len(my_list)):
