@@ -1,12 +1,18 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+"""This module define a square and his attributes
+
+"""
+
+
 class Square():
-    """ Class than define a square
+    """ Define a square
 
+    Args:
+        size: the size of the square
     """
-
     def __init__(self, size=0):
-        self.__size = size
-        if size not is int:
+        self.__size = int(size)
+        if type(size) is not int:
             raise TypeError("size must be an integer")
-        elif size < 0:
+        if self.__size < 0:
             raise ValueError("size must be >= 0")
