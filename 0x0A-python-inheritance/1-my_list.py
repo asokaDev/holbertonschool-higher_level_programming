@@ -3,6 +3,9 @@
 
 
 class MyList(list):
+    def __init__(self):
+        """Constructor"""
+        super().__init__()
 
     def print_sorted(self):
         """Prints the list, but sorted (ascending sort)"""
