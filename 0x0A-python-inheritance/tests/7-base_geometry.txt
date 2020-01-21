@@ -1,0 +1,12 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+detect invalid type list
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", [17])
+Traceback (most recent call last):
+TypeError: my_int must be an integer
+
+detect valid value integer
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 6)
+
