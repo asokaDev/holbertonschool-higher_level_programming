@@ -13,11 +13,15 @@ class Rectangle(Base):
         id: id of the rectangle
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
+
+    def area(self):
+        """Returns the area value of the Rectangle"""
+        return self.__height * self.__width
 
     """Getters and setters"""
     @property
