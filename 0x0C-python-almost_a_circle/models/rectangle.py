@@ -23,6 +23,20 @@ class Rectangle(Base):
         """Returns the area value of the Rectangle"""
         return self.__height * self.__width
 
+    def display(self):
+        """Prints in stdout the Rectangle instance with the character #"""
+        for i in range(self.__height):
+            for i in range(self.__width):
+                print("#", end="")
+            print()
+
+    """Special methods"""
+    def __str__(self):
+        """Return a string with the characteristic of the Rectangle
+            instance"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+                self.id, self.x, self.y, self.__width, self.__height)
+
     """Getters and setters"""
     @property
     def width(self):
@@ -79,4 +93,3 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
