@@ -31,14 +31,12 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    """Special methods"""
     def __str__(self):
         """Return a string with the characteristic of the Rectangle
             instance"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
                 self.id, self.x, self.y, self.__width, self.__height)
 
-    """Getters and setters"""
     @property
     def width(self):
         """Get the value of width"""
