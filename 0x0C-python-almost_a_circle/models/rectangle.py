@@ -51,7 +51,7 @@ class Rectangle(Base):
                 if key == 4:
                     self.y = value
         elif kwargs:
-            for key, value in  kwargs.items():
+            for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
 
