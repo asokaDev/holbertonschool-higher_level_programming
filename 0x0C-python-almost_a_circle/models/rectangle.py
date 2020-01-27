@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-from models.base import Base
 """
 This module define the Rectangle class
 """
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -46,7 +46,9 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """Set the value of width"""
+        """Set the value of width
+            value: value of width
+            """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
