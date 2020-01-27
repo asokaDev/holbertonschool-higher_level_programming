@@ -36,6 +36,20 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
+    def update(self, *args):
+        """Assigns an argument to each attribute:"""
+        for i, arg in enumerate(args):
+            if i == 0:
+                self.id = arg
+            if i == 1:
+                self.__width = arg
+            if i == 2:
+                self.__height = arg
+            if i == 3:
+                self.x = arg
+            if i == 4:
+                self.y = arg
+
     def __str__(self):
         """Return a string with the characteristic of the Rectangle
             instance"""
