@@ -16,7 +16,35 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
+    def update(self, *args, **kwargs):
+        """Update the attributes of the Square"""
+        if args:
+            for key, value in enumerate(args):
+                if key == 0:
+                    self.id = value
+                if key == 1:
+                    self.size = value
+                if key == 2:
+                    self.x = value
+                if key == 3:
+                    self.y = value
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+
     def __str__(self):
         """Return a string with the characteristic of the Square instance"""
         return "[Square] ({}) {}/{} - {}".format(
                 self.id, self.x, self.y, self.width)
+
+    @property
+    def size(self):
+        """Get the value of size"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """Set the value of size"""
+        self.width = value
+        self.height = value
