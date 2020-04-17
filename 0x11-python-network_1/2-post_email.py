@@ -6,6 +6,6 @@ from sys import argv
 from urllib import parse, request
 
 if __name__ == "__main__":
-    data = parse.urlencode({'email': sys.argv[2]}).encode()
+    data = parse.urlencode({'email': argv[2]}).encode()
     with request.urlopen(argv[1], data) as req:
         print(req.read().decode('utf-8'))
