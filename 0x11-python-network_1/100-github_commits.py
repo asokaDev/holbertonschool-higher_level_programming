@@ -6,7 +6,7 @@ from sys import argv
 
 if __name__ == "__main__":
     req = get("https://api.github.com/repos/{}/{}/commits".
-               format(argv[2], argv[1])).json()
+              format(argv[2], argv[1])).json()
     num = 0
     for val in req:
         num += 1
