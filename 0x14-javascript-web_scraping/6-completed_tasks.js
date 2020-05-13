@@ -6,11 +6,11 @@ request(process.argv[2], (error, response, body) => {
     console.log(error);
   } else {
     const arr = JSON.parse(body);
-    console.log(arr.reduce((obj, elem) => {
-      if (elem.completed) {
-        ret[elem.userId] ? ret[elem.userId]++ : ret[elem.userId] = 1;
+    console.log(arr.reduce((obj, el) => {
+      if (el.completed) {
+        obj[el.userId] ? obj[el.userId]++ : obj[el.userId] = 1;
       }
-      return ret;
+      return obj;
     }, {}));
   }
 });
