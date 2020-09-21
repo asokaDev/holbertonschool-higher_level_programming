@@ -137,4 +137,4 @@ quote
 a.out
 *.swp
 *#
-*main.py
+*-main.*
