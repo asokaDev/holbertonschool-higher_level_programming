@@ -1,26 +1,32 @@
 #!/usr/bin/node
 
 class Rectangle {
-  constructor (w, h) {
-    if (parseInt(w) > 0 && parseInt(h) > 0) {
-      this.height = h;
-      this.width = w;
+  constructor (_width, _heigh) {
+    if (isNaN(_width) || isNaN(_heigh) ||
+        _width <= 0 || _heigh <= 0) {
+      return;
     }
+    this.width = _width;
+    this.height = _heigh;
   }
 
   print () {
-    for (let i = 0; i < this.height; i++) {
+    let i = 0;
+    while (i < this.height) {
       console.log('X'.repeat(this.width));
+      i++;
     }
   }
 
   rotate () {
-    [this.width, this.height] = [this.height, this.width];
+    const __width = this.width;
+    this.width = this.height;
+    this.height = __width;
   }
 
   double () {
-    this.height = this.height * 2;
-    this.width = this.width * 2;
+    this.width *= 2;
+    this.height *= 2;
   }
 }
 

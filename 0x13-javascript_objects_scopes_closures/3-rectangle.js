@@ -1,16 +1,21 @@
 #!/usr/bin/node
 
 class Rectangle {
-  constructor (w, h) {
-    if (parseInt(w) > 0 && parseInt(h) > 0) {
-      this.height = h;
-      this.width = w;
+
+  constructor (_width, _heigh) {
+    if (isNaN(_width) || isNaN(_heigh) ||
+        _width <= 0 || _heigh <= 0) {
+      return;
     }
+    this.width = _width;
+    this.height = _heigh;
   }
 
   print () {
-    for (let i = 0; i < this.height; i++) {
+    let i = 0;
+    while (i < this.height) {
       console.log('X'.repeat(this.width));
+      i++;
     }
   }
 }
